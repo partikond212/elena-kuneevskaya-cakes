@@ -1,0 +1,19 @@
+.footer {
+  background: var(--choco);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 48px 0 24px;
+}
+
+.topPart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 2px solid grey;
+}
+.topPartContainer {
+  padding: 10px;
+}

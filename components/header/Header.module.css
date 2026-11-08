@@ -36,6 +36,9 @@
   caret-color: transparent;
   font-family: var(--sans);
 }
+.headerNav a:not(:last-child):hover {
+  color: var(--berry);
+}
 .headerNav a:last-child {
   padding: 8px 20px;
   border-radius: 1000px;

@@ -1,7 +1,7 @@
 import React, { type FC } from "react";
 import styles from "@/components/sections/hero/Hero.module.css";
 import HeaderNavLink from "@/components/ui/header-nav-button/HeaderNavLink";
-import OrderCakeLink from "@/components/ui/check-catalog-link/CheckCatalogLink";
+import CheckCatalogLink from "@/components/ui/check-catalog-link/CheckCatalogLink";
 import heroCake from "../../../public/mainScreenCake.jpeg";
 import Image from "next/image";
 const Hero: FC = () => {
@@ -31,7 +31,7 @@ const Hero: FC = () => {
               text={"Заказать торт"}
               className={`orderLink ${styles.orderCake}`}
             />
-            <OrderCakeLink
+            <CheckCatalogLink
               goTo={"catalog"}
               text={"Смотреть каталог"}
               className={`CheckCatalogLink `}

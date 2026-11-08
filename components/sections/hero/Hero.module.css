@@ -2,10 +2,11 @@
   display: flex;
   gap: 55px;
   justify-content: space-between;
-  padding: 250px 0px 0px 0px;
+  padding: 200px 0px 0px 0px;
 }
 .heroWrapper {
-  height: 100vh;
+  min-height: 100vh;
+  margin-bottom: 20px;
 }
 .hero_badge {
   font-weight: 600;

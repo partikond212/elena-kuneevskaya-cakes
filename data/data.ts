@@ -1,8 +1,7 @@
-export const images =[
+import { Cake, Category } from "@/types"
 
-]
 
-export const categories = [
+export const categories:Category[] = [
 {
         title:'Все',
         value:'all'
@@ -17,7 +16,7 @@ export const categories = [
     },
     {
         title:'Свадебные',
-        value:'weeding'
+        value:'wedding'
     },
      {
         title:'Бенто',
@@ -28,4 +27,8 @@ export const categories = [
         value:'desserts'
     },
 
+]
+export const cakes:Cake[] = [
+    {id:'1',title:'Торт с клубникой и цветами',category:"birthday",price:2200,image:'/birthdayCake.jpeg'},
+    {id:'2',title:'Бент торт ручной работы',category:"bento",price:3200,image:'/bentoCake.jpeg'}
 ]

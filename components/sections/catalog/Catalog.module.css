@@ -1,0 +1,23 @@
+.activeCategoryBtn {
+  color: #fff;
+  background: var(--choco);
+}
+
+.categories {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.filteredCakes {
+  display: flex;
+  transition: all 0.4s ease;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  gap: 35px;
+  padding: 10px 0px 10px 0px;
+}

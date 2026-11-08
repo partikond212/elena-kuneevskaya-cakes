@@ -15,6 +15,11 @@ const heading = localFont({
       weight: "600",
       style: "italic",
     },
+    {
+      path: "./fonts/cormorant-garamond-v21-cyrillic_latin-600.woff2",
+      weight: "600",
+      style: "normal",
+    },
   ],
 });
 
@@ -27,9 +32,14 @@ const body = localFont({
       style: "normal",
     },
     {
+      path: "./fonts/manrope-v23-cyrillic_latin-regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
       path: "./fonts/manrope-v23-cyrillic_latin-600.woff2",
       weight: "600",
-      style: "italic",
+      style: "normal",
     },
   ],
 });

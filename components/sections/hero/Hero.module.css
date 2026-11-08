@@ -4,7 +4,9 @@
   justify-content: space-between;
   padding: 250px 0px 0px 0px;
 }
-
+.heroWrapper {
+  height: 100vh;
+}
 .hero_badge {
   font-weight: 600;
   font-size: 14.4px;
@@ -42,7 +44,9 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  font-weight: 700;
+  a {
+    font-weight: 600;
+  }
 }
 .orderCake {
   padding: 14px 28px;
@@ -93,6 +97,7 @@
   .navLinks {
     flex-direction: column;
     justify-content: center;
+
     width: 100%;
     a {
       width: 100%;

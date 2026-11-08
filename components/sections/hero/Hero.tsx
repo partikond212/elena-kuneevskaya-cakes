@@ -6,8 +6,8 @@ import heroCake from "../../../public/mainScreenCake.jpeg";
 import Image from "next/image";
 const Hero: FC = () => {
   return (
-    <div>
-      <div className={`container ${styles.heroContainer}`}>
+    <div className={styles.heroWrapper}>
+      <section className={`container ${styles.heroContainer}`}>
         <div className={styles.leftSide}>
           {" "}
           {/*  левая часть главного экрана для информации и взаимодействия */}
@@ -48,7 +48,7 @@ const Hero: FC = () => {
           />
           {/*Изображение торта на главный экран */}
         </div>
-      </div>
+      </section>
     </div>
   );
 };

@@ -4,16 +4,48 @@
   display: flex;
   flex-direction: column;
   padding: 48px 0 24px;
+  a {
+    transition: all 0.2s ease;
+  }
+  a:hover {
+    color: var(--rose);
+  }
 }
 
 .topPart {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 35px;
   margin-bottom: 40px;
   padding-bottom: 30px;
   border-bottom: 2px solid grey;
 }
 .topPartContainer {
   padding: 10px;
+}
+
+.topPartTitle {
+  font-family: var(--serif);
+  font-size: 22px;
+}
+.contactsInfo {
+  max-width: 300px;
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+}
+.socialsList {
+  display: flex;
+  gap: 20px;
+  margin-top: 15px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.workshop {
+  p {
+    margin-top: 20px;
+  }
 }

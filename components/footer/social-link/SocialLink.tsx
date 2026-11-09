@@ -6,7 +6,11 @@ type SocialLinkProps = {
   goTo: string;
 };
 const SocialLink: FC<SocialLinkProps> = ({ text, goTo }) => {
-  return <a href={goTo}>{text}</a>;
+  return (
+    <a href={goTo} className={styles.socialLink}>
+      {text}
+    </a>
+  );
 };
 
 export default SocialLink;

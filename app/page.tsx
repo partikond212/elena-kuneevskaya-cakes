@@ -3,7 +3,7 @@ import Header from "@/components/header/Header";
 import Catalog from "@/components/sections/catalog/Catalog";
 import Hero from "@/components/sections/hero/Hero";
 
-//TODO:Нужно будет не забыть про эффект скрытия предыдущего контента на странице при скролле
+//TODO:Нужно будет не забыть про эффект скрытия предыдущего контента на странице при скролле ,а также анимацию появления
 export default function Home() {
   return (
     <>

@@ -4,12 +4,12 @@ import HeaderNavLink from "@/components/ui/header-nav-button/HeaderNavLink";
 import CheckCatalogLink from "@/components/ui/check-catalog-link/CheckCatalogLink";
 import heroCake from "../../../public/mainScreenCake.jpeg";
 import Image from "next/image";
+import Reveal from "@/components/ui/reveal/Reveal";
 const Hero: FC = () => {
   return (
     <div className={styles.heroWrapper}>
       <section className={`container ${styles.heroContainer}`}>
-        <div className={styles.leftSide}>
-          {" "}
+        <Reveal isImmediate delay={0.2} className={styles.leftSide}>
           {/*  левая часть главного экрана для информации и взаимодействия */}
           <div className={styles.hero_badge}>
             <span className={styles.stars}>★★★★★</span>
@@ -37,17 +37,18 @@ const Hero: FC = () => {
               className={`CheckCatalogLink `}
             />
           </div>
-        </div>
-        <div className={styles.rightSide}>
+        </Reveal>
+        <Reveal isImmediate delay={0.45} className={styles.rightSide}>
           <Image
             src={heroCake}
             alt="Торт Елены Кунеевской для главного экрана странички"
             preload={true}
+            sizes="(max-width: 900px) 80vw, 50vw"
             className={styles.mainScreenCake}
             fill
           />
           {/*Изображение торта на главный экран */}
-        </div>
+        </Reveal>
       </section>
     </div>
   );

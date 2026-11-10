@@ -1,9 +1,15 @@
-"use client";
 import { type FC } from "react";
 import styles from "./Footer.module.css";
 import SocialLink from "./social-link/SocialLink";
-const Footer: FC = () => {
-  const date = new Date();
+import { cacheLife } from "next/cache";
+async function getYear() {
+  "use cache";
+  cacheLife("days");
+  return new Date().getFullYear();
+}
+
+const Footer: FC = async () => {
+  const year = getYear();
   return (
     <footer className={styles.footer}>
       <div className="container">
@@ -41,7 +47,7 @@ const Footer: FC = () => {
           </div>
         </div>
         <div className={styles.bottomPart}>
-          © {date.getFullYear()} Кондитерская мастерская Елены Кунеевской
+          © {year} Кондитерская мастерская Елены Кунеевской
         </div>
       </div>
     </footer>

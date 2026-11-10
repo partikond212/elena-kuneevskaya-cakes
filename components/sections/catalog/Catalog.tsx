@@ -7,6 +7,7 @@ import CategoryBtn from "@/components/ui/category-btn/CategoryBtn";
 
 import { CategoryValue } from "@/types";
 import CakeCard from "./cake-card/CakeCard";
+import { h2 } from "motion/react-client";
 
 const Catalog: FC = () => {
   const [currentCategory, setCurrentCategory] = useState<CategoryValue>("all");
@@ -38,19 +39,23 @@ const Catalog: FC = () => {
         {/*Сами торты отсортированные по категориям*/}
         <motion.div className={styles.filteredCakes}>
           <AnimatePresence mode="popLayout">
-            {visibleCakes.map((cake) => (
-              <motion.div
-                key={cake.id}
-                layout
-                className={styles.cakeItem}
-                initial={{ opacity: 0, scale: 0.9, y: 22 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              >
-                <CakeCard cake={cake} />
-              </motion.div>
-            ))}
+            {visibleCakes ? (
+              visibleCakes.map((cake) => (
+                <motion.div
+                  key={cake.id}
+                  layout
+                  className={styles.cakeItem}
+                  initial={{ opacity: 0, scale: 0.9, y: 22 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.8 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                >
+                  <CakeCard cake={cake} />
+                </motion.div>
+              ))
+            ) : (
+              <h2>Нет тортов по данной категории!</h2>
+            )}
           </AnimatePresence>
         </motion.div>
       </div>

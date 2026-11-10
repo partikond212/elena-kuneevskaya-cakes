@@ -15,26 +15,27 @@
   transform: translateY(-8px);
 }
 .imageContainer {
-  aspect-ratio: 4/5;
-  display: flex;
-  flex: 1;
+  aspect-ratio: 3/4;
   position: relative;
 }
 .cakeImage {
-  width: 100%;
-  height: 100%;
+  object-fit: cover;
 }
 .cakeInfo {
   padding: 20px;
-  margin-bottom: 15px;
+  margin-bottom: auto;
 }
+
 .orderCakeBtn {
   display: flex;
-  flex: 1 1 33%;
   justify-content: center;
   align-items: center;
   padding: 12px 22px;
 }
 .cakeInfoContainer {
   padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
 }

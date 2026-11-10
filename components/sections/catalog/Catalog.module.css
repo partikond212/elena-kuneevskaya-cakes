@@ -13,11 +13,13 @@
 }
 
 .filteredCakes {
-  display: flex;
-  transition: all 0.4s ease;
-  flex-wrap: wrap;
-  justify-content: center;
-
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 300px));
   gap: 35px;
-  padding: 10px 0px 10px 0px;
+  justify-content: center;
+  padding: 10px 0px;
+}
+
+.cakeItem {
+  display: flex;
 }

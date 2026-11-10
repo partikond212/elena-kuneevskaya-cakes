@@ -13,7 +13,7 @@ const Catalog: FC = () => {
   const visibleCakes =
     currentCategory == "all"
       ? cakes
-      : cakes.filter((c) => c.category === currentCategory);
+      : cakes.filter((c) => c.categories.includes(currentCategory));
 
   return (
     <section id="catalog">
@@ -42,6 +42,7 @@ const Catalog: FC = () => {
               <motion.div
                 key={cake.id}
                 layout
+                className={styles.cakeItem}
                 initial={{ opacity: 0, scale: 0.9, y: 22 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.8 }}

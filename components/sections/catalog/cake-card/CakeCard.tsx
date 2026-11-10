@@ -20,7 +20,9 @@ const CakeCard: FC<CakeCardProps> = ({ cake }) => {
       <div className={styles.cakeInfoContainer}>
         <div className={styles.cakeInfo}>
           <h3 className={styles.cakeTitle}>{cake.title}</h3>
-          <p className={styles.cakePrice}>от {cake.price} ₽ / кг</p>
+          <p className={styles.cakePrice}>
+            от {cake.price} ₽ / {cake.unitValue} кг
+          </p>
         </div>
         <CheckCatalogLink
           goTo={"order"}

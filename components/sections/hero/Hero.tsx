@@ -5,16 +5,28 @@ import CheckCatalogLink from "@/components/ui/check-catalog-link/CheckCatalogLin
 import heroCake from "../../../public/mainScreenCake.jpeg";
 import Image from "next/image";
 import Reveal from "@/components/ui/reveal/Reveal";
+import StarBorder from "@/components/ui/star-border/StarBorder";
 const Hero: FC = () => {
   return (
     <div className={styles.heroWrapper}>
       <section className={`container ${styles.heroContainer}`}>
         <Reveal isImmediate delay={0.2} className={styles.leftSide}>
           {/*  левая часть главного экрана для информации и взаимодействия */}
-          <div className={styles.hero_badge}>
+          <StarBorder
+            as="div"
+            className={styles.hero_badge}
+            theme="light"
+            color="#dd6f7b"
+            trailColor="#6b1919"
+            radius={999}
+            duration={8}
+            backgroundColor="transparent"
+            textColor="inherit"
+            borderColor="transparent"
+          >
             <span className={styles.stars}>★★★★★</span>
             5.0 · 226 оценок на Яндекс Картах
-          </div>
+          </StarBorder>
           <h1 className={styles.heroTitle}>
             Торты,которые <em> хочется </em>
             попробовать первым

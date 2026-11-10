@@ -1,0 +1,80 @@
+.fillingCard {
+  position: relative; /* чтобы кнопку «инфо» можно было поставить в угол */
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Круглая кнопка «i» в правом верхнем углу карточки */
+.infoBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 1.5px solid rgba(74, 44, 36, 0.15);
+  border-radius: 50%;
+  background: var(--cream);
+  color: var(--choco);
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.infoBtn:hover {
+  background: var(--berry);
+  border-color: var(--berry);
+  color: #fff;
+  transform: scale(1.08);
+}
+
+/* Видимая рамка при навигации с клавиатуры (Tab) */
+.infoBtn:focus-visible {
+  outline: 3px solid var(--berry);
+  outline-offset: 2px;
+}
+
+.info {
+  padding: 20px 56px 20px 20px; /* справа место под кнопку, чтобы текст не залезал */
+}
+
+.title {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--choco);
+  margin-bottom: 6px;
+}
+
+.desc {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+@media (max-width: 600px) {
+  .infoBtn {
+    width: 30px;
+    height: 30px;
+    top: 8px;
+    right: 8px;
+  }
+  .info {
+    padding: 14px 44px 14px 14px;
+  }
+  .title {
+    font-size: 1.1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .infoBtn {
+    transition: none;
+  }
+}

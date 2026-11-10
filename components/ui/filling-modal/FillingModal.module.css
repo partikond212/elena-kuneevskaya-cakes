@@ -1,0 +1,27 @@
+.overlay {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  overflow: hidden;
+  left: 0;
+  background: #00000096;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fillingModalWrapper {
+  position: relative;
+  width: min(480px, 100%);
+  background: #fff;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.imgContainer {
+  position: relative;
+  aspect-ratio: 1 / 1;
+}
+
+.currentImage {
+  object-fit: cover;
+}

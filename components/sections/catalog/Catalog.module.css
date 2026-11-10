@@ -18,8 +18,37 @@
   gap: 35px;
   justify-content: center;
   padding: 10px 0px;
+  min-height: 500px;
 }
-
 .cakeItem {
   display: flex;
+}
+.empty {
+  display: flex;
+  align-self: flex-start; /* по вертикали в центр сетки */
+  justify-self: center;
+  max-width: 420px;
+  padding: 48px 32px;
+  text-align: center;
+  color: var(--muted);
+  border: 1.5px dashed rgba(74, 44, 36, 0.2);
+  border-radius: var(--radius);
+}
+
+@media (max-width: 682px) {
+  .filteredCakes {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    min-height: auto;
+  }
+}
+
+@media (max-width: 682px) {
+  .filteredCakes {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
 }

@@ -7,7 +7,6 @@ import CategoryBtn from "@/components/ui/category-btn/CategoryBtn";
 
 import { CategoryValue } from "@/types";
 import CakeCard from "./cake-card/CakeCard";
-import { h2 } from "motion/react-client";
 
 const Catalog: FC = () => {
   const [currentCategory, setCurrentCategory] = useState<CategoryValue>("all");
@@ -17,7 +16,7 @@ const Catalog: FC = () => {
       : cakes.filter((c) => c.categories.includes(currentCategory));
 
   return (
-    <section id="catalog">
+    <section id="catalog" className="section">
       <div className="container">
         <h2 className="section-title">Наши торты</h2>
         <p className="section-sub">
@@ -39,7 +38,7 @@ const Catalog: FC = () => {
         {/*Сами торты отсортированные по категориям*/}
         <motion.div className={styles.filteredCakes}>
           <AnimatePresence mode="popLayout">
-            {visibleCakes ? (
+            {visibleCakes.length > 0 ? (
               visibleCakes.map((cake) => (
                 <motion.div
                   key={cake.id}
@@ -54,7 +53,16 @@ const Catalog: FC = () => {
                 </motion.div>
               ))
             ) : (
-              <h2>Нет тортов по данной категории!</h2>
+              <motion.p
+                key="empty"
+                className={styles.empty}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+              >
+                Пока нет тортов в этой категории — напишите нам, сделаем под
+                заказ!
+              </motion.p>
             )}
           </AnimatePresence>
         </motion.div>

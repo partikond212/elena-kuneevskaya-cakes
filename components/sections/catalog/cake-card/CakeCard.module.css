@@ -11,6 +11,7 @@
   transition: all 0.3s ease;
   box-shadow: 0px 5px 16px #0000001f;
 }
+
 .cakeCard:hover {
   transform: translateY(-8px);
 }
@@ -22,7 +23,8 @@
   object-fit: cover;
 }
 .cakeInfo {
-  padding: 20px;
+  font-size: 15px;
+  padding: 20px 20px 20px 0px;
   margin-bottom: auto;
 }
 
@@ -38,4 +40,11 @@
   flex-direction: column;
   flex: 1;
   justify-content: center;
+}
+
+@media (max-width: 682px) {
+  .orderCakeBtn {
+    font-size: 12.5px;
+    padding: 10px 16px;
+  }
 }

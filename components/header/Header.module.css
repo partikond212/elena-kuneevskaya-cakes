@@ -29,21 +29,21 @@
   gap: 32px;
   align-items: center;
 }
-.headerNav a {
+.headerNav div {
   transition: all 0.3s ease;
   font-weight: 500;
   font-size: 16px;
   caret-color: transparent;
   font-family: var(--sans);
 }
-.headerNav a:not(:last-child):hover {
+.headerNav div:not(:last-child):hover {
   color: var(--berry);
 }
-.headerNav a:last-child {
+.headerNav div:last-child {
   padding: 8px 20px;
   border-radius: 1000px;
 }
-.headerNav a:last-child .headerNav a:not(:last-child):hover {
+.headerNav div:last-child .headerNav div:not(:last-child):hover {
   color: var(--berry);
 }
 
@@ -51,7 +51,7 @@
   .logo {
     font-size: 1.25rem;
   }
-  .headerNav a:not(:last-child) {
+  .headerNav div:not(:last-child) {
     display: none;
   }
 }
@@ -60,7 +60,7 @@
   .logo {
     font-size: 1.1rem;
   }
-  .headerNav a {
+  .headerNav div {
     font-size: 13px;
     padding: 7px 16px;
   }

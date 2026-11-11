@@ -1,5 +1,5 @@
 "use client";
-import { type FC } from "react";
+import { useEffect, type FC } from "react";
 import Image from "next/image";
 import styles from "./FillingModal.module.css";
 import { Filling } from "@/data/data";
@@ -8,11 +8,26 @@ type FillingModalProps = {
   onClose: () => void;
 };
 const FillingModal: FC<FillingModalProps> = ({ currentFilling, onClose }) => {
+  useEffect(() => {
+    //Хук для предотвращения скролла во время открытой модалки
+    if (!currentFilling) return;
+
+    const html = document.documentElement;
+
+    html.style.overflow = "hidden";
+
+    return () => {
+      html.style.overflow = "";
+    };
+  }, [currentFilling]);
+
   if (!currentFilling) return;
   return (
     <div className={styles.overlay}>
       <div className={styles.fillingModalWrapper}>
-        <button onClick={onClose}>×</button>
+        <button className={styles.closeBtn} onClick={onClose}>
+          ×
+        </button>
         <div className={styles.imgContainer}>
           <Image
             src={currentFilling.image}

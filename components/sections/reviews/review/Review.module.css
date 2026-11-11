@@ -1,0 +1,20 @@
+.stars {
+  display: flex;
+  gap: 2px;
+  font-size: 18px;
+}
+.starFilled {
+  color: #f5b301;
+}
+.starEmpty {
+  color: #ddd;
+}
+.review {
+  padding: 10px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1 1 200px;
+  border-radius: 20px;
+  box-shadow: 0 6px 17px rgba(0, 0, 0, 0.15);
+}

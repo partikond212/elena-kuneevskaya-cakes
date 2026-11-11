@@ -12,3 +12,11 @@ export type Cake = {
     unitValue:number,
     image:string,    
 }
+
+export type ReviewT  ={
+    id:string,
+    author:string,
+    mark:1|2|3|4|5;
+    reviewText:string,
+
+}

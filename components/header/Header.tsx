@@ -18,7 +18,6 @@ const Header: FC = () => {
               sparkCount={10}
               sparkRadius={40}
               duration={700}
-              className={`orderLink `}
               style={{ width: "auto", height: "auto" }}
             >
               <HeaderNavLink text={"Торты"} goTo={"catalog"} />
@@ -29,7 +28,6 @@ const Header: FC = () => {
               sparkCount={10}
               sparkRadius={40}
               duration={700}
-              className={`orderLink `}
               style={{ width: "auto", height: "auto" }}
             >
               <HeaderNavLink text={"Начинки"} goTo={"fillings"} />
@@ -40,7 +38,6 @@ const Header: FC = () => {
               sparkCount={10}
               sparkRadius={40}
               duration={700}
-              className={`orderLink `}
               style={{ width: "auto", height: "auto" }}
             >
               <HeaderNavLink text={"Отзывы"} goTo={"reviews"} />

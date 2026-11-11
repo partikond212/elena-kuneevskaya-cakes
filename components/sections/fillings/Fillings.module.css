@@ -1,0 +1,8 @@
+.fillings {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 100%;
+  justify-content: center;
+  gap: 40px;
+  background: #f6ece2;
+}

@@ -2,26 +2,54 @@
   position: fixed;
   z-index: 100;
   top: 0;
-  overflow: hidden;
+
   left: 0;
   background: #00000096;
   inset: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  display: flex;
+  padding: 5%;
+  flex-direction: column;
 }
 .fillingModalWrapper {
   position: relative;
-  width: min(480px, 100%);
+  width: min(480px, 100%, 80vh);
+
   background: #fff;
   border-radius: var(--radius);
   overflow: hidden;
 }
 .imgContainer {
+  height: min(480px, 100%, 80vh);
   position: relative;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1;
 }
 
+.closeBtn {
+  position: absolute;
+  z-index: 10;
+  background: #00000054;
+  color: #fff;
+  right: 10px;
+  top: 20px;
+  padding: 15px;
+  border: none;
+  border-radius: 1000px;
+}
 .currentImage {
   object-fit: cover;
+}
+.fillingInfo {
+  position: absolute;
+  width: 100%;
+  height: max(10%, 50px);
+  color: #fff;
+  z-index: 10;
+  background: #00000054;
+  bottom: 0;
+  left: 0;
+  font-size: clamp(15px, 18px);
+  text-align: center;
 }

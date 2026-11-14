@@ -6,7 +6,6 @@ import Hero from "@/components/sections/hero/Hero";
 import Order from "@/components/sections/order/Order";
 import Reviews from "@/components/sections/reviews/Reviews";
 
-/
 export default function Home() {
   return (
     <>

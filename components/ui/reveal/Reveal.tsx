@@ -5,19 +5,23 @@ type RevealProps = {
   children: ReactNode;
   delay?: number;
   className?: string;
+  direction?: "x" | "y";
+  offset?: number;
   isImmediate?: boolean;
 };
 const Reveal: FC<RevealProps> = ({
   children,
   delay,
   className,
+  direction = "y",
+  offset = 40,
   isImmediate = false,
 }) => {
-  const visible = { opacity: 1, y: 0 };
+  const visible = { opacity: 1, [direction]: 0 };
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, [direction]: offset }}
       className={className}
       transition={{ duration: 0.6, ease: "easeOut", delay }}
       {...(isImmediate

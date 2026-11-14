@@ -1,0 +1,13 @@
+.addressLink {
+  font-size: 16px;
+  transition: all 0.25s ease;
+}
+.addressLink:hover {
+  color: var(--choco);
+}
+
+.reviewsContainer {
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+}

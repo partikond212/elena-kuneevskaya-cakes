@@ -1,7 +1,8 @@
 import { business, reviews } from "@/data/data";
-import React, { type FC } from "react";
+import { type FC } from "react";
 import styles from "./Reviews.module.css";
 import Review from "./review/Review";
+import SocialLink from "@/components/footer/social-link/SocialLink";
 const Reviews: FC = () => {
   return (
     <section id="reviews" className={`section `}>
@@ -9,10 +10,13 @@ const Reviews: FC = () => {
         <div>
           <h2 className="section-title">Отзывы</h2>
           <p className="section-sub">
-            115 отзывов на
-            <a className={styles.addressLink} href={business.address}>
-              Яндекс Картах
-            </a>
+            <SocialLink
+              className={styles.addressLink}
+              goTo={business.address}
+              text={"115 отзывов на Яндекс Картах"}
+              title={"Ссылка на яндекс карты"}
+              aria-label={"Ссылка на кондитерскую"}
+            />
           </p>
         </div>
         <div className={styles.reviewsContainer}>

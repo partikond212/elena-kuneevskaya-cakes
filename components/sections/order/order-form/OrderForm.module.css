@@ -1,0 +1,96 @@
+.OrderForm {
+  display: flex;
+  padding: 12px 14px;
+  flex-direction: column;
+
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  button {
+    padding: 11px 23px;
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+    border: none;
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 100px;
+    align-self: center;
+  }
+}
+
+.inputField,
+.selectField {
+  width: 100%;
+  min-width: 0%;
+  color: var(--text);
+  display: flex;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1.5px solid rgba(255, 154, 154, 0.63);
+  font: 400 1rem var(--sans);
+  background: var(--cream);
+}
+
+.inputField:focus,
+.selectField:focus {
+  outline: none;
+  border-color: var(--rose-dark);
+}
+
+textarea.inputField {
+  min-height: 96px;
+  resize: vertical;
+}
+
+.subFlex {
+  display: flex;
+  gap: 15px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 964px) {
+  .OrderForm {
+    padding: 8px 10px;
+    gap: 12px;
+  }
+  .subFlex {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 558px) {
+  .subFlex {
+    flex-direction: column;
+  }
+  .inputField,
+  .selectField {
+    font-size: 13.5px;
+    padding: 11px 13px;
+    width: 90%;
+    display: flex;
+    align-self: center;
+  }
+  .OrderForm {
+    div {
+      label {
+        font-size: 15.5px;
+        margin-bottom: 10px;
+      }
+    }
+    button {
+      padding: 10px 19px;
+      font-size: 15px;
+      width: 80%;
+      margin: 20px auto;
+    }
+  }
+}

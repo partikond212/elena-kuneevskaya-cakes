@@ -2,7 +2,9 @@ import { Cake, Category, ReviewT } from "@/types"
 
 
 export const business = {
-    address: 'https://yandex.ru/maps/org/konditerskaya_masterskaya_yeleny_kuneyevskoy/126333163638/?ll=39.228171%2C45.221936&z=7'
+    address: 'https://yandex.ru/maps/org/konditerskaya_masterskaya_yeleny_kuneyevskoy/126333163638/?ll=39.228171%2C45.221936&z=7',
+    whatsapp: "79528510161",
+
 }
 export const reviews:ReviewT[] = [
     {id:"1",author:'Надежда Пияйкина',mark:5,reviewText:'Много лет делаю заказы и просто балую семью десертами и тортами в данной кондитерской! Всегда очень вкусно и красиво! Торты на заказ любой сложности! Если нужно угощение , кондитерская всегда выручает свежими тортами и пирожными'},
@@ -68,33 +70,35 @@ export type Filling = {
   name: string
   desc: string
   image: string
+  slug?:string, //альтернативное назвние начинки на английском,например красный бархат => krasniy_barkhat
 }
  
 export const fillings: Filling[] = [
-  { name: 'Пища богов', desc: 'Тёмный и светлый бисквит с орехами и сметанным кремом. Насыщенный, но не приторный', image: '/fillings/pishcha-bogov.jpg' },
-  { name: 'Меренговый', desc: 'Воздушный меренговый рулет с нежным сливочным кремом и ягодной начинкой', image: '/fillings/merengovyy.jpg' },
-  { name: 'Чизкейк Сникерс', desc: 'Сливочный чизкейк на песочной основе с солёной карамелью и жареным арахисом', image: '/fillings/chizkeyk-snikers.jpg' },
-  { name: 'Лаванда', desc: 'Ягодный бисквит, тёмное ягодное конфи и лёгкий крем с нотками лаванды', image: '/fillings/lavanda.jpg' }, // уточнить
-  { name: 'Фисташка-малина', desc: 'Фисташковый бисквит, кисло-сладкое малиновое конфи и фисташковый крем', image: '/fillings/fistashka-malina.jpg' },
-  { name: 'Медовое', desc: 'Тонкие медовые коржи и нежный сметанный крем. Тот самый вкус из детства', image: '/fillings/medovoe.jpg' },
-  { name: 'Мильфей', desc: 'Шоколадный бисквит, сливочный мусс и заварные профитроли внутри', image: '/fillings/milfey.jpg' }, // уточнить
-  { name: 'Молочная девочка', desc: 'Тонкие коржи на сгущёнке и лёгкий сливочный крем', image: '/fillings/molochnaya-devochka.jpg' },
-  { name: 'Молочная девочка шоколад-вишня', desc: 'Шоколадные коржи на сгущёнке, сливочный крем и сочная вишня', image: '/fillings/molochnaya-devochka-shokolad-vishnya.jpg' },
-  { name: 'Молочная девочка орех', desc: 'Коржи на сгущёнке с орехами и нежный сливочный крем', image: '/fillings/molochnaya-devochka-oreh.jpg' },
-  { name: 'Сникерс', desc: 'Шоколадный бисквит, карамель, жареный арахис и сливочный крем', image: '/fillings/snikers.jpg' },
-  { name: 'Творожно-йогуртовый', desc: 'Ванильный бисквит, лёгкий творожно-йогуртовый крем и фруктовая прослойка', image: '/fillings/tvorozhno-yogurtovyy.jpg' },
-  { name: 'Молочный ломтик', desc: 'Шоколадный бисквит и нежная молочная начинка, как у любимого десерта', image: '/fillings/molochnyy-lomtik.jpg' },
-  { name: 'Красный бархат', desc: 'Классика: бархатный красный бисквит, крем-чиз и ягодная прослойка', image: '/fillings/krasnyy-barhat.jpg' },
-  { name: 'Белый бархат', desc: 'Ванильный бархатный бисквит, крем-чиз и карамельно-ореховая прослойка', image: '/fillings/belyy-barhat.jpg' },
-  { name: 'Наполеон', desc: 'Хрустящие слоёные коржи и нежный заварной крем', image: '/fillings/napoleon.jpg' },
-  { name: 'Андерсон', desc: 'Шоколадные коржи и яркий сливочный крем', image: '/fillings/anderson.jpg' }, // уточнить
-  { name: 'Три шоколада', desc: 'Три мусса: из тёмного, молочного и белого шоколада на шоколадном бисквите', image: '/fillings/tri-shokolada.jpg' },
-  { name: 'Рафаэлло', desc: 'Ванильный бисквит, кокосовый крем и миндаль', image: '/fillings/rafaello.jpg' },
-  { name: 'Анна Павлова', desc: 'Хрустящая снаружи и мягкая внутри меренга, сливочный крем и свежие ягоды', image: '/fillings/anna-pavlova.jpg' },
-  { name: 'Чизкейк с вишней', desc: 'Сливочный чизкейк на песочной основе с вишнёвым соусом', image: '/fillings/chizkeyk-s-vishney.jpg' },
-  { name: 'Чизкейк манго-маракуйя', desc: 'Сливочный чизкейк с тропическим слоем манго и маракуйи', image: '/fillings/chizkeyk-mango-marakuyya.jpg' },
-  { name: 'Киевский', desc: 'Ореховые коржи, нежный крем и шоколадная глазурь', image: '/fillings/kievskiy.jpg' },
-  { name: 'Птичье молоко', desc: 'Нежнейшее суфле на тонком бисквите под шоколадной глазурью', image: '/fillings/ptichye-moloko.jpg' },
-  { name: 'Колибри', desc: 'Бисквит с бананом и ананасом, крем-чиз и ягодная прослойка', image: '/fillings/kolibri.jpg' },
-  { name: 'Кевин', desc: 'Шоколадный бисквит с прослойками воздушного крема', image: '/fillings/kevin.jpg' }, // уточнить
+  { name: 'Пища богов', desc: 'Тёмный и светлый бисквит с орехами и сметанным кремом. Насыщенный, но не приторный', image: '/fillings/pishcha-bogov.jpg',slug:'pishcha-bogov' },
+  { name: 'Меренговый', desc: 'Воздушный меренговый рулет с нежным сливочным кремом и ягодной начинкой', image: '/fillings/merengovyy.jpg',slug:'merengovyy' },
+  { name: 'Чизкейк Сникерс', desc: 'Сливочный чизкейк на песочной основе с солёной карамелью и жареным арахисом', image: '/fillings/chizkeyk-snikers.jpg',slug:'chizkeyk-snikers' },
+  { name: 'Лаванда', desc: 'Ягодный бисквит, тёмное ягодное конфи и лёгкий крем с нотками лаванды', image: '/fillings/lavanda.jpg',slug:'lavanda' }, // уточнить
+  { name: 'Фисташка-малина', desc: 'Фисташковый бисквит, кисло-сладкое малиновое конфи и фисташковый крем', image: '/fillings/fistashka-malina.jpg',slug:'fistashka-malina' },
+  { name: 'Медовое', desc: 'Тонкие медовые коржи и нежный сметанный крем. Тот самый вкус из детства', image: '/fillings/medovoe.jpg',slug:'medovoe' },
+  { name: 'Мильфей', desc: 'Шоколадный бисквит, сливочный мусс и заварные профитроли внутри', image: '/fillings/milfey.jpg',slug:'milfey' }, // уточнить
+  { name: 'Молочная девочка', desc: 'Тонкие коржи на сгущёнке и лёгкий сливочный крем', image: '/fillings/molochnaya-devochka.jpg',slug:'molochnaya-devochka' },
+  { name: 'Молочная девочка шоколад-вишня', desc: 'Шоколадные коржи на сгущёнке, сливочный крем и сочная вишня', image: '/fillings/molochnaya-devochka-shokolad-vishnya.jpg',slug:'molochnaya-devochka-shokolad-vishnya' },
+  { name: 'Молочная девочка орех', desc: 'Коржи на сгущёнке с орехами и нежный сливочный крем', image: '/fillings/molochnaya-devochka-oreh.jpg',slug:'molochnaya-devochka-oreh' },
+  { name: 'Сникерс', desc: 'Шоколадный бисквит, карамель, жареный арахис и сливочный крем', image: '/fillings/snikers.jpg',slug:'snikers' },
+  { name: 'Творожно-йогуртовый', desc: 'Ванильный бисквит, лёгкий творожно-йогуртовый крем и фруктовая прослойка', image: '/fillings/tvorozhno-yogurtovyy.jpg',slug:'tvorozhno-yogurtovyy' },
+  { name: 'Молочный ломтик', desc: 'Шоколадный бисквит и нежная молочная начинка, как у любимого десерта', image: '/fillings/molochnyy-lomtik.jpg',slug:'molochnyy-lomtik' },
+  { name: 'Красный бархат', desc: 'Классика: бархатный красный бисквит, крем-чиз и ягодная прослойка', image: '/fillings/krasnyy-barhat.jpg',slug:'krasnyy-barhat' },
+  { name: 'Белый бархат', desc: 'Ванильный бархатный бисквит, крем-чиз и карамельно-ореховая прослойка', image: '/fillings/belyy-barhat.jpg',slug:'belyy-barhat' },
+  { name: 'Наполеон', desc: 'Хрустящие слоёные коржи и нежный заварной крем', image: '/fillings/napoleon.jpg',slug:'napoleon' },
+  { name: 'Андерсон', desc: 'Шоколадные коржи и яркий сливочный крем', image: '/fillings/anderson.jpg',slug:'anderson' }, // уточнить
+  { name: 'Три шоколада', desc: 'Три мусса: из тёмного, молочного и белого шоколада на шоколадном бисквите', image: '/fillings/tri-shokolada.jpg',slug:'tri-shokolada' },
+  { name: 'Рафаэлло', desc: 'Ванильный бисквит, кокосовый крем и миндаль', image: '/fillings/rafaello.jpg',slug:'rafaello' },
+
+  { name: 'Анна Павлова', desc: 'Хрустящая снаружи и мягкая внутри меренга, сливочный крем и свежие ягоды', image: '/fillings/anna-pavlova.jpg',slug:'anna-pavlova' },
+  { name: 'Чизкейк с вишней', desc: 'Сливочный чизкейк на песочной основе с вишнёвым соусом', image: '/fillings/chizkeyk-s-vishney.jpg',slug:'chizkeyk-s-vishney' },
+  { name: 'Чизкейк манго-маракуйя', desc: 'Сливочный чизкейк с тропическим слоем манго и маракуйи', image: '/fillings/chizkeyk-mango-marakuyya.jpg',slug:'chizkeyk-mango-marakuyya' },
+  { name: 'Киевский', desc: 'Ореховые коржи, нежный крем и шоколадная глазурь', image: '/fillings/kievskiy.jpg',slug:'kievskiy' },
+  { name: 'Птичье молоко', desc: 'Нежнейшее суфле на тонком бисквите под шоколадной глазурью', image: '/fillings/ptichye-moloko.jpg',slug:'ptichye-moloko' },
+  { name: 'Колибри', desc: 'Бисквит с бананом и ананасом, крем-чиз и ягодная прослойка', image: '/fillings/kolibri.jpg',slug:'kolibri' },
+  { name: 'Кевин', desc: 'Шоколадный бисквит с прослойками воздушного крема', image: '/fillings/kevin.jpg',slug:'kevin' }, // уточнить
 ]

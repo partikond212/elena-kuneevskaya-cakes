@@ -25,7 +25,7 @@ const Hero: FC = () => {
             borderColor="transparent"
           >
             <span className={styles.stars}>★★★★★</span>
-            5.0 · 226 оценок на Яндекс Картах
+            5.0 · 100+ оценок на Яндекс Картах
           </StarBorder>
           <h1 className={styles.heroTitle}>
             Торты,которые <em> хочется </em>

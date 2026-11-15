@@ -2,7 +2,8 @@
 import React, { type FC } from "react";
 
 import styles from "./FillingCard.module.css";
-import { Filling } from "@/data/data";
+
+import { Filling } from "@/types";
 
 type FillingCardProps = {
   filling: Filling;

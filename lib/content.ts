@@ -1,8 +1,8 @@
 'use cache'
 import { createReader } from "@keystatic/core/reader";
 import config from "@/keystatic.config";
-import type { Cake } from "@/types";
-import type { Filling } from "@/data/data";
+import type { Cake, Filling } from "@/types";
+
 
 const reader = createReader(process.cwd(), config);
 

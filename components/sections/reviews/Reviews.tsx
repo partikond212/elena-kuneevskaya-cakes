@@ -12,8 +12,8 @@ const Reviews: FC = () => {
           <p className="section-sub">
             <SocialLink
               className={styles.addressLink}
-              goTo={business.address}
-              text={"115 отзывов на Яндекс Картах"}
+              goTo={business.mapsUrl}
+              text={"100+ отзывов на Яндекс Картах"}
               title={"Ссылка на яндекс карты"}
               aria-label={"Ссылка на кондитерскую"}
             />

@@ -2,7 +2,8 @@
 import { useEffect, type FC } from "react";
 import Image from "next/image";
 import styles from "./FillingModal.module.css";
-import { Filling } from "@/data/data";
+
+import { Filling } from "@/types";
 type FillingModalProps = {
   currentFilling: Filling | null;
   onClose: () => void;

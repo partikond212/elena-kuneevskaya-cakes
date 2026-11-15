@@ -1,8 +1,7 @@
 import { type FC } from "react";
 import styles from "./Order.module.css";
 import OrderForm from "./order-form/OrderForm";
-import { Filling } from "@/data/data";
-import { Cake } from "@/types";
+import { Cake, Filling } from "@/types";
 type OrderProps = {
   cakes: Cake[];
   fillings: Filling[];

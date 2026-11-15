@@ -2,8 +2,19 @@ import { Cake, Category, Filling, ReviewT } from "@/types"
 
 
 export const business = {
-    address: 'https://yandex.ru/maps/org/konditerskaya_masterskaya_yeleny_kuneyevskoy/126333163638/?ll=39.228171%2C45.221936&z=7',
+    name: "Кондитерская мастерская Елены Кунеевской",
     phoneNumber: "+79528510161",
+    address: {
+    street: "Пролетарская ул., 1А",
+    city: "станица Динская",
+    region: "Краснодарский край",
+    postalCode: "353200",         // ← проверить
+  },
+  geo: { lat: 45.221936, lng: 39.226009 },
+  mapsUrl: "https://yandex.ru/maps/org/konditerskaya_masterskaya_yeleny_kuneyevskoy/126333163638/",
+  telegram: "https://t.me/konditerskayamasterskaya",
+  vk: "https://vk.com/id709724480",
+
 
 }
 export const reviews:ReviewT[] = [

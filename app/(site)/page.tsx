@@ -3,6 +3,7 @@ import Fillings from "@/components/sections/fillings/Fillings";
 import Hero from "@/components/sections/hero/Hero";
 import Order from "@/components/sections/order/Order";
 import Reviews from "@/components/sections/reviews/Reviews";
+import BakeryJsonLd from "@/components/seo/BakeryJsonLd";
 import { getCakes, getFillings } from "@/lib/content";
 import type { Metadata } from "next";
 
@@ -19,6 +20,7 @@ export default async function Home() {
   return (
     <>
       {/*Весь контент*/}
+      <BakeryJsonLd />
       <Hero /> {/*Главный экран*/}
       <Catalog cakes={cakes} /> {/*Каталог тортов*/}
       <Fillings fillings={fillings} /> {/*начинки*/}

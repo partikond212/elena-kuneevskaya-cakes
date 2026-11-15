@@ -5,6 +5,13 @@ import styles from "./OrderForm.module.css";
 import ClickSpark from "@/components/ui/click-spak/ClickSpark";
 import { FC, useState } from "react";
 import { Cake } from "@/types";
+import {
+  calcApproxPrice,
+  isValidWeight,
+  MAX_WEIGHT,
+  MIN_WEIGHT,
+} from "@/lib/price";
+import { buildOrderMessage, buildWhatsAppLink } from "@/lib/orderMessage";
 
 const formatPhone = (value: string) => {
   // 1. Выкидываем всё, кроме цифр: "+7 (918) 93" → "791893"
@@ -41,7 +48,11 @@ type OrderFormProps = {
 const OrderForm: FC<OrderFormProps> = ({ cakes, fillings }) => {
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [cake, setCake] = useState<Pick<Cake, "title"> | "suggest">();
+  const [cakeSlug, setCakeSlug] = useState<string>("suggestion");
+  const [weight, setWeight] = useState(2);
+  const selectedCake = cakes.find((c) => c.id === cakeSlug) ?? null;
+  const approxPriceSumm = calcApproxPrice(selectedCake, weight) ?? 2000;
+
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const clean = e.target.value.replace(/[^а-яёА-ЯЁa-zA-Z\s-]/g, "");
     setName(clean.charAt(0).toUpperCase() + clean.slice(1));
@@ -58,18 +69,17 @@ const OrderForm: FC<OrderFormProps> = ({ cakes, fillings }) => {
     const data = new FormData(e.currentTarget);
     const filling = fillings.find((f) => f.slug === data.get("filling"));
 
-    const orderMessage = [
-      `Здравствуйте! Меня зовут ${name}.`,
-      `Хочу ${cake !== "suggest" ? "хочу заказать торт - " + cake : "чтобы вы мне посоветовали торт"} на ${data.get("date")}`,
-      `Вес: ${data.get("weight")} кг`,
-      ` ${filling ? "Начинка: " + filling.name : "Начинку ,пожалуйста,посоветуйте  "}`,
-      `Телефон: ${data.get("phoneNumber")}`,
-      `Пожелания: ${data.get("wishes") || "нет"}`,
-    ].join("\n");
-    window.open(
-      `https://wa.me/${business.whatsapp}?text=${encodeURIComponent(orderMessage)}`,
-      "_blank",
-    );
+    const message = buildOrderMessage({
+      name,
+      phone: phoneNumber,
+      date: String(data.get("date")),
+      weight,
+      cakeTitle: selectedCake?.title ?? null,
+      fillingName: filling?.name ?? null,
+      wishes: String(data.get("wishes") ?? ""),
+      approxPrice: approxPriceSumm,
+    });
+    window.open(buildWhatsAppLink(business.phoneNumber, message), "_blank");
   };
   return (
     <form className={styles.OrderForm} onSubmit={(e) => handleSubmit(e)}>
@@ -81,6 +91,7 @@ const OrderForm: FC<OrderFormProps> = ({ cakes, fillings }) => {
           <input
             className={styles.inputField}
             id="name"
+            required
             type="text"
             name="name"
             value={name}
@@ -123,27 +134,31 @@ const OrderForm: FC<OrderFormProps> = ({ cakes, fillings }) => {
           <input
             className={styles.inputField}
             type="number"
-            min={1}
+            min={MIN_WEIGHT}
             step={0.5}
-            max={50}
+            value={weight}
+            max={MAX_WEIGHT}
             required
+            onChange={(e) => setWeight(Number(e.target.value))}
             name="weight"
             id="weight"
           />
         </div>
       </div>
+
       <label htmlFor="cake" className={styles.label}>
         Торт
       </label>
       <select
-        defaultValue="suggestion"
         id="cake"
         name="cake"
         className={styles.selectField}
+        value={cakeSlug}
+        onChange={(e) => setCakeSlug(e.target.value)}
       >
         <option value="suggestion">Посоветуйте мне</option>
         {cakes.map((c) => (
-          <option value={c.title} key={c.id}>
+          <option value={c.id} key={c.id}>
             {c.title}
           </option>
         ))}
@@ -174,6 +189,20 @@ const OrderForm: FC<OrderFormProps> = ({ cakes, fillings }) => {
         id="wishes"
         placeholder="Например: надпись «С днём рождения, Маша!», розовые цветы"
       ></textarea>
+      <p className={styles.approxePrice}>
+        {!isValidWeight(weight) ? (
+          "Укажите вес от 1 до 10 кг"
+        ) : approxPriceSumm ? (
+          <>
+            Примерная стоимость:
+            <b>~{approxPriceSumm.toLocaleString("ru-RU")} ₽</b>. Точную цену
+            Елена назовёт после согласования оформления.
+          </>
+        ) : (
+          "Стоимость рассчитаем вместе после выбора торта"
+        )}
+      </p>
+
       <ClickSpark
         sparkColor={["#b8414f", "#e8a0a0"]}
         shape="star"
@@ -183,7 +212,7 @@ const OrderForm: FC<OrderFormProps> = ({ cakes, fillings }) => {
         style={{ width: "auto", height: "auto" }}
       >
         <button type="submit" className="orderLink">
-          Заказать
+          Отправить заявку в WhatsApp
         </button>
       </ClickSpark>
     </form>

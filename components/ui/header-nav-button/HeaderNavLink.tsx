@@ -7,7 +7,7 @@ type HeaderNavLinkProps = {
 };
 const HeaderNavLink: FC<HeaderNavLinkProps> = ({ text, goTo, className }) => {
   return (
-    <a href={`#${goTo}`} className={className}>
+    <a href={`/#${goTo}`} className={className}>
       {text}
     </a>
   );

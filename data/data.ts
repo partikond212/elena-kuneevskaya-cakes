@@ -3,7 +3,7 @@ import { Cake, Category, ReviewT } from "@/types"
 
 export const business = {
     address: 'https://yandex.ru/maps/org/konditerskaya_masterskaya_yeleny_kuneyevskoy/126333163638/?ll=39.228171%2C45.221936&z=7',
-    whatsapp: "79528510161",
+    phoneNumber: "+79528510161",
 
 }
 export const reviews:ReviewT[] = [

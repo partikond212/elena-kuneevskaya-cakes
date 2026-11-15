@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 const heading = localFont({
   variable: "--font-heading",
@@ -45,11 +46,19 @@ const body = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Торты на заказ в Динской — Мастерская Елены",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Торты на заказ в Динской — Мастерская Елены Кунеевской",
+    template: "%s — Мастерская Елены",
+  },
   description:
-    "Сайт-визитка Елены Кунеевской.Вкусные торты,красивый дизайн,лучшее для клиента",
+    "Торты на заказ в станице Динской: на день рождения, свадьбу, детские и бенто. Натуральные сливки и свежие ягоды. Рейтинг 5.0 на Яндекс Картах. Заказ через WhatsApp.",
+  openGraph: {
+    type: "website",
+    locale: "ru_RU",
+    siteName: SITE_NAME,
+  },
 };
-
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="ru" className={`${heading.variable} ${body.variable}`}>

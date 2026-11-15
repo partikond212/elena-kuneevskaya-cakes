@@ -2,6 +2,8 @@ import { type FC } from "react";
 import styles from "./Footer.module.css";
 import SocialLink from "./social-link/SocialLink";
 import { cacheLife } from "next/cache";
+import Link from "next/link";
+import { business } from "@/data/data";
 async function getYear() {
   "use cache";
   cacheLife("days");
@@ -9,7 +11,7 @@ async function getYear() {
 }
 
 const Footer: FC = async () => {
-  const year = getYear();
+  const year = await getYear();
   return (
     <footer className={styles.footer}>
       <div className="container">
@@ -24,10 +26,12 @@ const Footer: FC = async () => {
             <div className={styles.contacts}>
               <h3 className={styles.topPartTitle}>Контакты</h3>
               <p className={styles.contactsInfo}>
-                <a href="https://yandex.ru/maps/org/konditerskaya_masterskaya_yeleny_kuneyevskoy/126333163638/?ll=39.226009%2C45.221936&mode=search&sll=39.161715%2C45.051645&sspn=0.267105%2C0.183739&text=%D0%BA%D0%BE%D0%BD%D0%B4%D0%B8%D1%82%D0%B5%D1%80%D1%81%D0%BA%D0%B0%D1%8F%20%D0%B5%D0%BB%D0%B5%D0%BD%D1%8B%20%D0%BA%D1%83%D0%BD%D0%B5%D0%B5%D0%B2%D1%81%D0%BA%D0%BE%D0%B9&z=16">
+                <Link href="https://yandex.ru/maps/org/konditerskaya_masterskaya_yeleny_kuneyevskoy/126333163638/?ll=39.226009%2C45.221936&mode=search&sll=39.161715%2C45.051645&sspn=0.267105%2C0.183739&text=%D0%BA%D0%BE%D0%BD%D0%B4%D0%B8%D1%82%D0%B5%D1%80%D1%81%D0%BA%D0%B0%D1%8F%20%D0%B5%D0%BB%D0%B5%D0%BD%D1%8B%20%D0%BA%D1%83%D0%BD%D0%B5%D0%B5%D0%B2%D1%81%D0%BA%D0%BE%D0%B9&z=16">
                   Пролетарская ул., 1А, станица Динская
-                </a>
-                <a href="tel:89189340134">+7 (918) 934-01-34</a>
+                </Link>
+                <Link href={`tel:${business.phoneNumber}`}>
+                  +7 952 851-01-61
+                </Link>
               </p>
             </div>
             <div className={styles.socials}>
@@ -38,7 +42,7 @@ const Footer: FC = async () => {
                   text={"Telegram"}
                 />
                 <SocialLink
-                  goTo={"https://wa.me/79189341034"}
+                  goTo={`https://wa.me/${business.phoneNumber}`}
                   text={"WhatsApp"}
                 />
                 <SocialLink goTo={"https://vk.com/id709724480"} text={"VK"} />

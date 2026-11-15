@@ -2,14 +2,15 @@ import React, { type FC } from "react";
 import styles from "./Header.module.css";
 import HeaderNavLink from "../ui/header-nav-button/HeaderNavLink";
 import ClickSpark from "../ui/click-spak/ClickSpark";
+import Link from "next/link";
 const Header: FC = () => {
   return (
     <header className={styles.header}>
       <div className="container">
         <div className={styles.headerContent}>
-          <a href="#" className={styles.logo}>
+          <Link href="/" className={styles.logo}>
             Мастерская Елены
-          </a>
+          </Link>
 
           <nav className={styles.headerNav}>
             <ClickSpark

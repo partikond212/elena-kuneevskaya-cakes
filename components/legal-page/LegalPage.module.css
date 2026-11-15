@@ -1,0 +1,25 @@
+.legal {
+  max-width: 760px;
+}
+.title {
+  font-family: var(--serif);
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+.updated {
+  color: var(--muted);
+  margin-bottom: 32px;
+}
+.legal h2 {
+  font-size: 1.2rem;
+  margin: 28px 0 10px;
+}
+.legal p,
+.legal li {
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+.legal ol,
+.legal ul {
+  padding-left: 20px;
+}

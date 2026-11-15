@@ -32,7 +32,10 @@ body {
   font-family: var(--sans);
   background: var(--cream);
   color: var(--text);
+  display: flex;
   line-height: 1.6;
+  min-height: 100vh;
+  flex-direction: column;
 }
 img {
   max-width: 100%;
@@ -156,4 +159,10 @@ a {
 .CheckCatalogLink:hover {
   background: var(--choco);
   color: #fff;
+}
+
+.mainPageContent {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
 }

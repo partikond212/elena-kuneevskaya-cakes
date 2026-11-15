@@ -1,9 +1,10 @@
 "use client";
 import React, { useState, type FC } from "react";
 import styles from "./Fillings.module.css";
-import { Filling } from "@/data/data";
+
 import FillingModal from "@/components/ui/filling-modal/FillingModal";
 import FillingCard from "@/components/sections/fillings/filling-card/FillingCard";
+import { Filling } from "@/types";
 
 type FillingsProps = { fillings: Filling[] };
 const Fillings: FC<FillingsProps> = ({ fillings }) => {

@@ -20,3 +20,10 @@ export type ReviewT  ={
     reviewText:string,
 
 }
+export type Filling = {
+  name: string
+  desc: string
+  image: string
+  slug?:string, //альтернативное назвние начинки на английском,например красный бархат => krasniy_barkhat
+}
+ 

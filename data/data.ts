@@ -1,4 +1,4 @@
-import { Cake, Category, ReviewT } from "@/types"
+import { Cake, Category, Filling, ReviewT } from "@/types"
 
 
 export const business = {
@@ -66,13 +66,7 @@ export const cakes:Cake[] = [
 // Перед запуском обязательно покажи Елене и поправь состав, где отличается.
 // Помечено "// уточнить" там, где по фото угадать сложно.
  
-export type Filling = {
-  name: string
-  desc: string
-  image: string
-  slug?:string, //альтернативное назвние начинки на английском,например красный бархат => krasniy_barkhat
-}
- 
+
 export const fillings: Filling[] = [
   { name: 'Пища богов', desc: 'Тёмный и светлый бисквит с орехами и сметанным кремом. Насыщенный, но не приторный', image: '/fillings/pishcha-bogov.jpg',slug:'pishcha-bogov' },
   { name: 'Меренговый', desc: 'Воздушный меренговый рулет с нежным сливочным кремом и ягодной начинкой', image: '/fillings/merengovyy.jpg',slug:'merengovyy' },

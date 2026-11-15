@@ -1,10 +1,10 @@
 "use client";
-import { business, Filling } from "@/data/data";
+import { business } from "@/data/data";
 import styles from "./OrderForm.module.css";
 
 import ClickSpark from "@/components/ui/click-spak/ClickSpark";
 import { FC, useState } from "react";
-import { Cake } from "@/types";
+import { Cake, Filling } from "@/types";
 import {
   calcApproxPrice,
   isValidWeight,
@@ -152,6 +152,7 @@ const OrderForm: FC<OrderFormProps> = ({ cakes, fillings }) => {
       <select
         id="cake"
         name="cake"
+        required
         className={styles.selectField}
         value={cakeSlug}
         onChange={(e) => setCakeSlug(e.target.value)}
@@ -170,6 +171,7 @@ const OrderForm: FC<OrderFormProps> = ({ cakes, fillings }) => {
         defaultValue="suggestion"
         id="filling"
         name="filling"
+        required
         className={styles.selectField}
       >
         <option value="suggestion">Посоветуйте мне</option>

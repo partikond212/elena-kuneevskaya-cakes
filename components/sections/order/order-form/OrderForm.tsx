@@ -1,9 +1,9 @@
 "use client";
-import { business, cakes, fillings } from "@/data/data";
+import { business, Filling } from "@/data/data";
 import styles from "./OrderForm.module.css";
 
 import ClickSpark from "@/components/ui/click-spak/ClickSpark";
-import { useState } from "react";
+import { FC, useState } from "react";
 import { Cake } from "@/types";
 
 const formatPhone = (value: string) => {
@@ -34,7 +34,11 @@ const formatPhone = (value: string) => {
 };
 
 const PHONE_REGEX = /^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/;
-const OrderForm = () => {
+type OrderFormProps = {
+  cakes: Cake[];
+  fillings: Filling[];
+};
+const OrderForm: FC<OrderFormProps> = ({ cakes, fillings }) => {
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [cake, setCake] = useState<Pick<Cake, "title"> | "suggest">();

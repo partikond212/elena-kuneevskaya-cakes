@@ -1,7 +1,13 @@
 import { type FC } from "react";
 import styles from "./Order.module.css";
 import OrderForm from "./order-form/OrderForm";
-const Order: FC = () => {
+import { Filling } from "@/data/data";
+import { Cake } from "@/types";
+type OrderProps = {
+  cakes: Cake[];
+  fillings: Filling[];
+};
+const Order: FC<OrderProps> = ({ cakes, fillings }) => {
   return (
     <section id="order" className={`section`}>
       <div className="container">
@@ -20,7 +26,7 @@ const Order: FC = () => {
             </ul>
           </div>
           <div className={styles.orderAction}>
-            <OrderForm />
+            <OrderForm cakes={cakes} fillings={fillings} />
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
-title: "Фрукты"
-price: 1500
+title: Фрукты
+price: 1510
 unitValue: 1
-image: "/cakes/frukty/image.jpeg"
+image: /cakes/frukty/image.jpeg
 categories:
   - desserts

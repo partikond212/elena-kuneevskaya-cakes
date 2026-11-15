@@ -5,16 +5,19 @@ import Fillings from "@/components/sections/fillings/Fillings";
 import Hero from "@/components/sections/hero/Hero";
 import Order from "@/components/sections/order/Order";
 import Reviews from "@/components/sections/reviews/Reviews";
+import { getCakes, getFillings } from "@/lib/content";
 
-export default function Home() {
+export default async function Home() {
+  const cakes = await getCakes();
+  const fillings = await getFillings();
   return (
     <>
       <Header /> {/*Шапка сайта*/}
       <main className="mainPageContent">
         {/*Весь контент*/}
         <Hero /> {/*Главный экран*/}
-        <Catalog /> {/*Каталог тортов*/}
-        <Fillings /> {/*начинки*/}
+        <Catalog cakes={cakes} /> {/*Каталог тортов*/}
+        <Fillings fillings={fillings} /> {/*начинки*/}
         <Reviews />
         {/*Отзывы*/}
         <Order />

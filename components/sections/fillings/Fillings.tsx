@@ -1,11 +1,12 @@
 "use client";
 import React, { useState, type FC } from "react";
 import styles from "./Fillings.module.css";
-import { Filling, fillings } from "@/data/data";
+import { Filling } from "@/data/data";
 import FillingModal from "@/components/ui/filling-modal/FillingModal";
 import FillingCard from "@/components/sections/fillings/filling-card/FillingCard";
 
-const Fillings: FC = () => {
+type FillingsProps = { fillings: Filling[] };
+const Fillings: FC<FillingsProps> = ({ fillings }) => {
   const [selected, setSelected] = useState<Filling | null>(null);
 
   return (

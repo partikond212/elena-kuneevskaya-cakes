@@ -2,15 +2,17 @@
 import { useState, type FC } from "react";
 import styles from "./Catalog.module.css";
 import { AnimatePresence, motion } from "motion/react";
-import { cakes, categories } from "@/data/data";
+import { categories } from "@/data/data";
 import CategoryBtn from "@/components/ui/category-btn/CategoryBtn";
 
-import { CategoryValue } from "@/types";
+import { Cake, CategoryValue } from "@/types";
 import CakeCard from "./cake-card/CakeCard";
 import Reveal from "@/components/ui/reveal/Reveal";
 
-const Catalog: FC = () => {
+type CatalogProps = { cakes: Cake[] };
+const Catalog: FC<CatalogProps> = ({ cakes }) => {
   const [currentCategory, setCurrentCategory] = useState<CategoryValue>("all");
+
   const visibleCakes =
     currentCategory == "all"
       ? cakes

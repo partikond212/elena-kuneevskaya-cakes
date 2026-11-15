@@ -1,10 +1,11 @@
 import { config, collection, fields } from "@keystatic/core";
 
 export default config({
-  storage:
+ storage:
   process.env.NODE_ENV === "development"
     ? { kind: "local" }
     : { kind: "github", repo: { owner: "partikond212", name: "elena-kuneevskaya-cakes" } },
+
 
     locale: "ru-RU",
   collections: {
